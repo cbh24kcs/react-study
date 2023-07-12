@@ -1,13 +1,13 @@
 // import { useLocalStorage } from "./hooks/useLocalStorage";
-import { FunctionComponent, FC, useState } from "react";
+import { FC,  } from "react";
 import useLocalStorage from "react-use-localstorage";
 
 interface DemoProps {
   x: string;
 }
 
-const Demo: FC<DemoProps> = (props) => {
-  const [state, setState] = useLocalStorage("person", JSON.stringify({ name: "张三", age: 18 }));
+const Demo: FC<DemoProps> = () => {
+  const [state, ] = useLocalStorage("person", JSON.stringify({ name: "张三", age: 18 }));
 
   return (
     <div>
@@ -17,7 +17,6 @@ const Demo: FC<DemoProps> = (props) => {
 };
 
 const App: FC = () => {
-  const [_, forceUpdate] = useState(null);
   const [state, setState] = useLocalStorage("person", JSON.stringify({ name: "张三", age: 18 }));
 
 
